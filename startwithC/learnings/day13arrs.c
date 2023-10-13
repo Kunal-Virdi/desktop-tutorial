@@ -10,13 +10,16 @@ int main()
     for(i=0;i<5;i++){
         printf("address: %u, value: %d\n",ptr+i,*(ptr+i));
     }
+    // passing an array to a function using values and pointers.
     display1(arr,5);
     display2(&arr[0],5);
     int max,*p;
+    // returning an array from the functon
     p = fun(&max);
     for(i=0;i<max;i++){
         printf("%d\t",p[i]);
     }
+    // this code is to understand the operations on addresses in the backend
     // x = &arr[1];
     // y = &arr[4];
     // printf("x is %d\n y is %d",x,y);
@@ -30,6 +33,7 @@ int main()
     // for(i=0;i<5;i++){
     //     display2(arr+i);
     // }
+    // these arguments are made to check some certain operations on arrays and pointers 
 //     p = arr;
 //     printf("1st value %d\n",arr[1]);
 //     printf("1st value %d\n",*(p+1));
@@ -48,6 +52,7 @@ int main()
 // {
 //     printf("%d ",*x);
 // }
+//  this function uses values in array
 void display1(int ptr[],int n)
 {
     int i;
@@ -55,6 +60,7 @@ void display1(int ptr[],int n)
         printf("element: %d\n",ptr[i]);
     }
 }
+//  this function uses pointers/addresses
 void display2(int *ptr,int n)
 {
     int i;
@@ -62,6 +68,7 @@ void display2(int *ptr,int n)
         printf("element: %d\n",*(ptr + i));
     }
 }
+// this func will return this array when called to main function
 int *fun(int *num)
 {
     static int arr[] = {10,20,30,40,50};
